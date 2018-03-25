@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      
+      .floating-box {
+    display: inline-block;
+    width: 82px;
+    height: 38px;
+    margin: 10px;
+    padding: 5px;
+   ;  
+}
+
+.after-box {
+    border: 3px solid red; 
+}
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+         ['Month', 'intensity', 'impact', 'relevance', 'likelihood', 'Others', 'Average'],
+         ['2013 Jan(oil)',  60,      400,         200,             300,           450,      250],
+         ['2014 Jan(consumption)',  60,      345,        200,             300,          288,     264],
+         ['2015 Jan(Gas)',  60,      267,        200,             300,           397,      245],
+         ['2016 Jan(Production)',  60,      200,        200,             300,           215,      290],
+         ['2017 Jan(GDP)',  60,      194,         200,             300,          366,      367]
+      ]);
+
+    var options = {
+      title : ' Productions Parameters of many Topics  by North America(USA)',
+      vAxis: {title: ' Range'},
+      hAxis: {title: 'Years'},
+      seriesType: 'bars',
+      series: {5: {type: 'line'}}
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <h2>Some Documentries</h2>
+    <a href="http://www.eia.gov/outlooks/aeo/pdf/0383(2017).pdf" target="_blank">Oil</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://www.sbwire.com/press-releases/n-hexane-market-hit-at-a-cagr-of-5-by-2024-pmr-report-761520.htm " target="_blank">Consumption</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://www.eia.gov/outlooks/aeo/pdf/0383(2017).pdf" target="_blank">Gas</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://deloitte.wsj.com/riskandcompliance/2017/01/10/the-slow-road-back-oil-gas-industry-outlook-for-2017/" target="_blank">Productions</a>&nbsp;&nbsp;&nbsp;
+    <a href="http://www.vanguardngr.com/2017/01/imf-affirms-nigerias-recovery-recession-0-8-growth-forecast/" target="_blank">GDP</a>&nbsp;&nbsp;&nbsp;
+    
+  </body>
+</html>
